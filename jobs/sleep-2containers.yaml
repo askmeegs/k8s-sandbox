@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sleepwhy
+spec:
+  template:
+    spec:
+      containers:
+      - name: sleep1
+        image: mmussomele/sleep
+      # - name: sleep2
+      #   image: mmussomele/sleep
+      restartPolicy: Never
+  activeDeadlineSeconds: 15
