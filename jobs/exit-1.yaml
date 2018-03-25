@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: exit-1
+spec:
+  activeDeadlineSeconds: 20
+  backoffLimit: 10
+  template:
+    spec:
+      containers:
+      - name: exit-1
+        image: kovetskiy/stub-exit-1
+      restartPolicy: Never
